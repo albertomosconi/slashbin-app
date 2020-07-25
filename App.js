@@ -4,6 +4,7 @@ import { AppLoading } from "expo";
 import { useFonts } from "expo-font";
 import * as expo from "expo-status-bar";
 
+import colors from "./app/config/colors";
 import { AppProvider } from "./app/other/AppContext";
 import CameraScreen from "./app/screens/CameraScreen";
 
@@ -28,7 +29,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#000",
+    backgroundColor: colors.black,
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 });

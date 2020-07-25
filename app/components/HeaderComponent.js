@@ -7,6 +7,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+import colors from "../config/colors";
+
 export default function HeaderComponent() {
   return (
     <View style={styles.header}>
@@ -31,8 +33,9 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     fontFamily: "Rubik-Bold",
-    color: "white",
-    backgroundColor: "transparent",
+    color: colors.white,
+    textShadowColor: colors.black,
+    textShadowRadius: 20,
   },
   info: {
     width: 30,
