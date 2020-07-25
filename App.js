@@ -1,21 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, SafeAreaView, StatusBar, Platform } from "react-native";
+import { AppLoading } from "expo";
+import { useFonts } from "expo-font";
+import * as expo from "expo-status-bar";
+
+import { AppProvider } from "./app/other/AppContext";
+import CameraScreen from "./app/screens/CameraScreen";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+  const [fontsLoaded] = useFonts({
+    "Rubik-Regular": require("./app/assets/fonts/Rubik-Regular.ttf"),
+    "Rubik-Bold": require("./app/assets/fonts/Rubik-Bold.ttf"),
+  });
+
+  return !fontsLoaded ? (
+    <AppLoading />
+  ) : (
+    <AppProvider>
+      <SafeAreaView style={styles.container}>
+        <expo.StatusBar style="light" />
+        <CameraScreen />
+      </SafeAreaView>
+    </AppProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#000",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 });
