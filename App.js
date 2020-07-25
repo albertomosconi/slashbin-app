@@ -5,7 +5,7 @@ import { useFonts } from "expo-font";
 import * as expo from "expo-status-bar";
 
 import colors from "./app/config/colors";
-import { AppProvider } from "./app/other/AppContext";
+import { AppProvider } from "./app/components/context/AppContext";
 import CameraScreen from "./app/screens/CameraScreen";
 
 export default function App() {

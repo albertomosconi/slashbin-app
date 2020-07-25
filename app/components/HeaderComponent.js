@@ -6,6 +6,7 @@ import {
   StatusBar,
   TouchableOpacity,
 } from "react-native";
+import { Entypo } from "@expo/vector-icons";
 
 import colors from "../config/colors";
 
@@ -15,7 +16,14 @@ export default function HeaderComponent() {
       <View style={{ flex: 1 }}>
         <Text style={styles.title}>./bin</Text>
       </View>
-      <TouchableOpacity style={styles.info}></TouchableOpacity>
+      <TouchableOpacity onPress={() => alert("Hello")}>
+        <Entypo
+          name="info"
+          size={30}
+          color={colors.white}
+          style={styles.info}
+        />
+      </TouchableOpacity>
     </View>
   );
 }
@@ -27,7 +35,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     top: StatusBar.currentHeight,
     paddingHorizontal: 20,
-    paddingVertical: 5,
+    paddingVertical: 10,
     alignItems: "center",
   },
   title: {
@@ -38,8 +46,7 @@ const styles = StyleSheet.create({
     textShadowRadius: 20,
   },
   info: {
-    width: 30,
-    height: 30,
-    backgroundColor: "red",
+    textShadowRadius: 20,
+    textShadowColor: colors.black,
   },
 });

@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Camera } from "expo-camera";
+import { AppContext } from "./context/AppContext";
 
 export default function CameraComponent() {
-  let camera = null;
+  const { camera, setCamera } = useContext(AppContext);
   const [hasPermission, setHasPermission] = useState(null);
 
   useEffect(() => {
@@ -21,7 +22,7 @@ export default function CameraComponent() {
   }
 
   return (
-    <Camera style={styles.camera} ratio="18:9" ref={(cam) => (camera = cam)} />
+    <Camera style={styles.camera} ratio="18:9" ref={(cam) => setCamera(cam)} />
   );
 }
 
