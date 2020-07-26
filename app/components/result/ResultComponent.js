@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 20,
     lineHeight: 50,
+    zIndex: 2,
   },
   container: {
     backgroundColor: colors.white,

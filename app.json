@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "slashbin-app",
+    "name": "./bin",
     "slug": "slashbin-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -19,6 +19,9 @@
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
+    },
+    "android": {
+      "package": "com.slashbin.app"
     }
   }
 }

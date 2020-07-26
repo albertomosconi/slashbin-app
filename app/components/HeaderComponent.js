@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   View,
   Text,
@@ -9,14 +9,17 @@ import {
 import { Entypo } from "@expo/vector-icons";
 
 import colors from "../config/colors";
+import { AppContext } from "./context/AppContext";
 
 export default function HeaderComponent() {
+  const { setInfo } = useContext(AppContext);
+
   return (
     <View style={styles.header}>
       <View style={{ flex: 1 }}>
         <Text style={styles.title}>./bin</Text>
       </View>
-      <TouchableOpacity onPress={() => alert("Hello")}>
+      <TouchableOpacity onPress={() => setInfo(1)}>
         <Entypo
           name="info"
           size={30}
